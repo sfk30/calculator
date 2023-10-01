@@ -43,17 +43,18 @@ numbers.forEach((number) => {
         if (operator === ''){
         num1 += number.textContent
         topDisplay.innerHTML = num1
-        console.log(`num 1 is ${num1}`)
+        // console.log(`num 1 is ${num1}`)
         } else {
         num2 += number.textContent
         topDisplay.innerHTML = num1 + ' ' + operator + ' ' + num2
-        console.log(`num 2 is ${num2}`)
+        // console.log(`num 2 is ${num2}`)
         }
     } )
 })
 
 
 function deleteMe() {
+    bottomDisplay.innerHTML = ''
     topDisplay.innerHTML = topDisplay.innerHTML.slice(0,-1)
 }
 
