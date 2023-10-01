@@ -34,7 +34,7 @@ let operator = ''
 operators.forEach((oper) => {
     oper.addEventListener('click', () => {
         operator = oper.textContent
-        topDisplay.innerHTML = num1 + operator
+        topDisplay.innerHTML = num1 + ' ' + operator
     })
 })
 
@@ -46,7 +46,7 @@ numbers.forEach((number) => {
         console.log(`num 1 is ${num1}`)
         } else {
         num2 += number.textContent
-        topDisplay.innerHTML = num1 + operator + num2
+        topDisplay.innerHTML = num1 + ' ' + operator + ' ' + num2
         console.log(`num 2 is ${num2}`)
         }
     } )
@@ -61,13 +61,13 @@ function calculate() {
     num1 = Number(num1)
     num2 = Number(num2)
     if (operator === '+') {
-        add(num1, num2)
+        bottomDisplay.innerHTML = add(num1, num2)
     }  else if (operator === '-') {
-        subtract(num1, num2)
+        bottomDisplay.innerHTML = subtract(num1, num2)
     }  else if (operator === '*') {
-        multiply(num1, num2)
+        bottomDisplay.innerHTML = multiply(num1, num2)
     }  else if (operator === '÷') {
-        divide(num1, num2)
+        bottomDisplay.innerHTML = divide(num1, num2)
     }
 
 }
