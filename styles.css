@@ -5,10 +5,12 @@
 
 body { 
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to right, transparent 0%, black 100%); 
 }
 
 #container {
@@ -37,7 +39,8 @@ button {
 }
 
 button:hover {
-    background-color: red;
+    background-color: rgb(60, 222, 237);
+    color: black;
 }
 
 
@@ -59,8 +62,26 @@ button:hover {
     background-color: orange;
 }
 
+#equals {
+    background-color: orange;
+    font-size: 30px;
+}
+
 #delete:hover {
     background-color: rgba(240, 38, 62, 0.762);
+}
+
+#equals:hover {
+    background-color: rgb(25, 188, 25);
+    color: black;
+}
+
+.dot, .operator {
+    font-size: 30px;
+}
+
+.divi {
+    font-size: 25px;
 }
 
 #display {
@@ -87,4 +108,23 @@ button {
 
 #bottom {
     font-size: 40px;
+}
+
+footer {
+    margin-top: 40px;
+    font-family: calculator;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+span {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
