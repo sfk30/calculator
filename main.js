@@ -67,6 +67,8 @@ function calculate() {
         bottomDisplay.innerHTML = subtract(num1, num2)
     }  else if (operator === '*') {
         bottomDisplay.innerHTML = multiply(num1, num2)
+    }  else if (operator === '÷' && num2 === 0) {
+        bottomDisplay.innerHTML = 'ERROR'
     }  else if (operator === '÷') {
         bottomDisplay.innerHTML = divide(num1, num2)
     }
