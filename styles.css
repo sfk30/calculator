@@ -1,3 +1,8 @@
+@font-face {
+    font-family: calculator;
+    src: url(calculator.ttf)
+}
+
 body { 
     display: flex;
     min-height: 100vh;
@@ -7,30 +12,54 @@ body {
 }
 
 #container {
-    height: 500px;
+    height: 510px;
     width: 400px;
     border: 10px solid black;
     border-radius: 10px;
     padding: 10px;
+    background-image: linear-gradient(180deg, rgba(16, 16, 17, 0.911), rgba(67, 70, 71, 0.19));
 }
 
 .calculator {
     display: grid;
     /* number of columns */
     grid-template-columns: repeat(4, 1fr);
-    /* height of rows */
+    /* height of rows default is 65px and minmax lets us change a row for e.g. display is taller than other rows*/
     grid-auto-rows: minmax(65px,auto);
     grid-gap: 5px;
 }
 
+button {
+    background-color: rgb(40, 34, 34);
+    color: antiquewhite;
+    font-size: 20px;
+    font-family: calculator;
+}
+
+button:hover {
+    background-color: red;
+}
+
+
 
 #clear {
     grid-column: 1/3;
+    background-color: rgb(38, 142, 233);
+    color: black;
+}
+
+#clear:hover {
+    background-color: darkblue;
+    color: white;
 }
 
 #delete {
     grid-column: 3/5;
     color: white;
+    background-color: orange;
+}
+
+#delete:hover {
     background-color: rgba(240, 38, 62, 0.762);
 }
 
@@ -39,11 +68,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: pink;
+    justify-content: center;
+    padding-right: 30px;
+    background-color: rgb(167, 163, 163);
     height: 150px;
     border-radius: 5px;
+    font-family: calculator;
+    border: 5px solid black;
 }
 
 button {
     border-radius: 10px;
+}
+
+#top {
+   font-size: 32px;
+}
+
+#bottom {
+    font-size: 40px;
 }
