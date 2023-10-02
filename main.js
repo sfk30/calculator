@@ -62,15 +62,31 @@ function calculate() {
     num1 = Number(num1)
     num2 = Number(num2)
     if (operator === '+') {
-        bottomDisplay.innerHTML = add(num1, num2)
+        result = add(num1, num2)
+        bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }  else if (operator === '-') {
-        bottomDisplay.innerHTML = subtract(num1, num2)
+        result = subtract(num1, num2)
+        bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }  else if (operator === '*') {
-        bottomDisplay.innerHTML = multiply(num1, num2)
+        result = multiply(num1, num2)
+        bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }  else if (operator === '÷' && num2 === 0) {
         bottomDisplay.innerHTML = 'ERROR'
     }  else if (operator === '÷') {
-        bottomDisplay.innerHTML = divide(num1, num2)
+        result = divide(num1, num2)
+        bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }
 
 }
@@ -83,6 +99,5 @@ function clearMe() {
     num1 = ''
     num2 = ''
     operator = ''
+    result = ''
 }
-
-
