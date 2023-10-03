@@ -96,21 +96,21 @@ function calculateMe() {
     if (operator === '+') {
         a = add(num1, num2)
         result = Math.round(a * 1000)/1000
-        bottomDisplay.innerHTML = Math.round(result * 1000)/1000
+        bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '-') {
         a = subtract(num1, num2)
         result = Math.round(a * 1000)/1000
-        bottomDisplay.innerHTML = Math.round(result * 1000)/1000
+        bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '*') {
         a = multiply(num1, num2)
         result = Math.round(a * 1000)/1000
-        bottomDisplay.innerHTML = Math.round(result * 1000)/1000
+        bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
         operator = ''
