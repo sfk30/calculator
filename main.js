@@ -143,8 +143,12 @@ function clearMe() {
 
 
 function haveIOverflowed() {
-    if (num1.length >= 7 || num2.length >= 7) {
+    if (num1.length >= 10) {
         bottomDisplay.innerHTML = 'No more digits please!'
+        topDisplay.innerHTML = ''
+    } else if (num2.length >= 10) {
+        bottomDisplay.innerHTML = 'No more digits please!'
+        topDisplay.innerHTML = ''
     } else {
         return
     }
