@@ -145,14 +145,20 @@ function clearMe() {
 function haveIOverflowed() {
     if (num1.length >= 10) {
         bottomDisplay.innerHTML = 'No more digits please!'
-        topDisplay.innerHTML = ''
+        resetDisplay()
     } else if (num2.length >= 10) {
         bottomDisplay.innerHTML = 'No more digits please!'
-        topDisplay.innerHTML = ''
+        resetDisplay()
     } else {
         return
     }
 }
 
-
+function resetDisplay() {
+    topDisplay.innerHTML = ''
+    num1 = ''
+    num2 = ''
+    operator = ''
+    result = ''
+}
 
