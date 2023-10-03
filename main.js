@@ -11,6 +11,7 @@ equalsBtn.addEventListener('click', calculateMe)
 clearBtn.addEventListener('click', clearMe)
 deleteBtn.addEventListener('click', deleteMe)
 
+
 const topDisplay = document.getElementById('top')
 topDisplay.innerHTML = ''
 const bottomDisplay = document.getElementById('bottom')
@@ -60,11 +61,13 @@ numbers.forEach((number) => {
         if (operator === ''){
         num1 += number.textContent
         topDisplay.innerHTML = num1
+        haveIOverflowed()
         // console.log(`num 1 is ${num1}`)
         } else {
         num2 += number.textContent
         topDisplay.innerHTML = num1 + ' ' + tempOperators[0] + ' ' + num2
         // console.log(`num 2 is ${num2}`)
+        haveIOverflowed()
         }
     } )
 })
@@ -138,6 +141,14 @@ function clearMe() {
     result = ''
 }
 
+
+function haveIOverflowed() {
+    if (num1.length >= 7 || num2.length >= 7) {
+        bottomDisplay.innerHTML = 'No more digits please!'
+    } else {
+        return
+    }
+}
 
 
 
