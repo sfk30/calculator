@@ -5,12 +5,11 @@ const numbers = document.querySelectorAll('.num')
 const clearBtn = document.getElementById('clear')
 const deleteBtn = document.getElementById('delete')
 const equalsBtn = document.getElementById('equals')
+const dotBtn = document.getElementById('dot')
 
-
-equalsBtn.addEventListener('click', calculate)
+equalsBtn.addEventListener('click', calculateMe)
 clearBtn.addEventListener('click', clearMe)
 deleteBtn.addEventListener('click', deleteMe)
-
 
 const topDisplay = document.getElementById('top')
 topDisplay.innerHTML = ''
@@ -78,23 +77,23 @@ function deleteMe() {
     num2 = num2.slice(0,-1)
 }
 
-function calculate() {
+function calculateMe() {
     num1 = Number(num1)
     num2 = Number(num2)
     if (operator === '+') {
-        result = add(num1, num2)
+        result = add(num1, num2).toFixed(2)
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '-') {
-        result = subtract(num1, num2)
+        result = subtract(num1, num2).toFixed(2)
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '*') {
-        result = multiply(num1, num2)
+        result = multiply(num1, num2).toFixed(2)
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
@@ -102,7 +101,7 @@ function calculate() {
     }  else if (operator === '÷' && num2 === 0) {
         bottomDisplay.innerHTML = 'ERROR'
     }  else if (operator === '÷') {
-        result = divide(num1, num2)
+        result = divide(num1, num2).toFixed(2)
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
@@ -112,7 +111,6 @@ function calculate() {
 }
 
 
-
 function clearMe() {
     topDisplay.innerHTML = ''
     bottomDisplay.innerHTML = ''
@@ -120,4 +118,22 @@ function clearMe() {
     num2 = ''
     operator = ''
     result = ''
+    dotBtn.disabled = false
 }
+
+
+dotBtn.addEventListener('click', dotBtnPressed)
+
+function dotBtnPressed() {
+        if (!num1.includes('.')) {
+            num1 += '.'
+            topDisplay.innerHTML += '.'
+        }
+        if (!num2.includes('.') && num2.length >= 1) {
+            num2 += '.'
+            topDisplay.innerHTML += '.'
+        }
+    }
+
+
+
