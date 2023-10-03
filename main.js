@@ -49,7 +49,7 @@ function operatorClicked(op) {
     }   else if (tempOperators.length = 2) {
         operator = tempOperators[0]
         // console.log(operator)
-        calculate()
+        calculateMe()
         tempOperators.shift()
         operator = tempOperators[0]
         // console.log(operator)
@@ -71,57 +71,6 @@ numbers.forEach((number) => {
 })
 
 
-function deleteMe() {
-    bottomDisplay.innerHTML = ''
-    topDisplay.innerHTML = topDisplay.innerHTML.slice(0,-1)
-    num2 = num2.slice(0,-1)
-}
-
-function calculateMe() {
-    num1 = Number(num1)
-    num2 = Number(num2)
-    if (operator === '+') {
-        result = add(num1, num2).toFixed(2)
-        bottomDisplay.innerHTML = result
-        num1 = result
-        num2 = ''
-        operator = ''
-    }  else if (operator === '-') {
-        result = subtract(num1, num2).toFixed(2)
-        bottomDisplay.innerHTML = result
-        num1 = result
-        num2 = ''
-        operator = ''
-    }  else if (operator === '*') {
-        result = multiply(num1, num2).toFixed(2)
-        bottomDisplay.innerHTML = result
-        num1 = result
-        num2 = ''
-        operator = ''
-    }  else if (operator === '÷' && num2 === 0) {
-        bottomDisplay.innerHTML = 'ERROR'
-    }  else if (operator === '÷') {
-        result = divide(num1, num2).toFixed(2)
-        bottomDisplay.innerHTML = result
-        num1 = result
-        num2 = ''
-        operator = ''
-    }
-
-}
-
-
-function clearMe() {
-    topDisplay.innerHTML = ''
-    bottomDisplay.innerHTML = ''
-    num1 = ''
-    num2 = ''
-    operator = ''
-    result = ''
-    dotBtn.disabled = false
-}
-
-
 dotBtn.addEventListener('click', dotBtnPressed)
 
 function dotBtnPressed() {
@@ -134,6 +83,45 @@ function dotBtnPressed() {
             topDisplay.innerHTML += '.'
         }
     }
+
+function deleteMe() {
+    bottomDisplay.innerHTML = ''
+    topDisplay.innerHTML = topDisplay.innerHTML.slice(0,-1)
+    num2 = num2.slice(0,-1)
+}
+
+function calculateMe() {
+    num1 = Number(num1)
+    num2 = Number(num2)
+    if (operator === '+') {
+        result = add(num1, num2).toFixed(2)
+        bottomDisplay.innerHTML = result
+    }  else if (operator === '-') {
+        result = subtract(num1, num2).toFixed(2)
+        bottomDisplay.innerHTML = result
+    }  else if (operator === '*') {
+        result = multiply(num1, num2).toFixed(2)
+        bottomDisplay.innerHTML = result
+    }  else if (operator === '÷' && num2 === 0) {
+        bottomDisplay.innerHTML = 'ERROR'
+    }  else if (operator === '÷') {
+        result = divide(num1, num2).toFixed(2)
+        bottomDisplay.innerHTML = result
+    }
+    num1 = result
+    num2 = ''
+    operator = ''
+}
+
+function clearMe() {
+    topDisplay.innerHTML = ''
+    bottomDisplay.innerHTML = ''
+    num1 = ''
+    num2 = ''
+    operator = ''
+    result = ''
+}
+
 
 
 
