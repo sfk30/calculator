@@ -38,8 +38,8 @@ operators.forEach((oper) => {
     oper.addEventListener('click', () => {
         operator = oper.textContent
         tempOperators.push(operator)
-        console.log(tempOperators)
-        console.log(tempOperators.length)
+        // console.log(tempOperators)
+        // console.log(tempOperators.length)
         operatorClicked()
     })
 })
@@ -49,11 +49,11 @@ function operatorClicked(op) {
         operator = op
     }   else if (tempOperators.length = 2) {
         operator = tempOperators[0]
-        console.log(operator)
+        // console.log(operator)
         calculate()
         tempOperators.shift()
         operator = tempOperators[0]
-        console.log(operator)
+        // console.log(operator)
     }
 }
 
