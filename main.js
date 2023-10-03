@@ -35,8 +35,7 @@ let tempOperators = []
 
 operators.forEach((oper) => {
     oper.addEventListener('click', () => {
-        operator = oper.textContent
-        tempOperators.push(operator)
+        tempOperators.push(oper.textContent)
         // console.log(tempOperators)
         // console.log(tempOperators.length)
         operatorClicked()
@@ -45,7 +44,7 @@ operators.forEach((oper) => {
 
 function operatorClicked(op) {
     if (tempOperators.length <= 1) {
-        operator = op
+        operator = tempOperators[0]
     }   else if (tempOperators.length = 2) {
         operator = tempOperators[0]
         // console.log(operator)
@@ -94,23 +93,35 @@ function calculateMe() {
     num1 = Number(num1)
     num2 = Number(num2)
     if (operator === '+') {
-        result = add(num1, num2).toFixed(2)
+        result = add(num1, num2)
         bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }  else if (operator === '-') {
-        result = subtract(num1, num2).toFixed(2)
+        result = subtract(num1, num2)
         bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }  else if (operator === '*') {
-        result = multiply(num1, num2).toFixed(2)
+        result = multiply(num1, num2)
         bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }  else if (operator === '÷' && num2 === 0) {
         bottomDisplay.innerHTML = 'ERROR'
+        num1 = result
+        num2 = ''
+        operator = ''
     }  else if (operator === '÷') {
-        result = divide(num1, num2).toFixed(2)
+        result = divide(num1, num2)
         bottomDisplay.innerHTML = result
+        num1 = result
+        num2 = ''
+        operator = ''
     }
-    num1 = result
-    num2 = ''
-    operator = ''
 }
 
 function clearMe() {
