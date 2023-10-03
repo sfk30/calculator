@@ -73,6 +73,7 @@ numbers.forEach((number) => {
 dotBtn.addEventListener('click', dotBtnPressed)
 
 function dotBtnPressed() {
+        num1 = num1.toString()
         if (!num1.includes('.')) {
             num1 += '.'
             topDisplay.innerHTML += '.'
@@ -93,19 +94,19 @@ function calculateMe() {
     num1 = Number(num1)
     num2 = Number(num2)
     if (operator === '+') {
-        result = add(num1, num2)
+        result = Math.round(1000 * add(num1, num2))/1000
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '-') {
-        result = subtract(num1, num2)
+        result = Math.round(1000 * subtract(num1, num2))/1000
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '*') {
-        result = multiply(num1, num2)
+        result = Math.round(1000 * multiply(num1, num2))/1000
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
@@ -116,7 +117,7 @@ function calculateMe() {
         num2 = ''
         operator = ''
     }  else if (operator === '÷') {
-        result = divide(num1, num2)
+        result = Math.round(1000 * divide(num1, num2))/1000
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
