@@ -94,20 +94,23 @@ function calculateMe() {
     num1 = Number(num1)
     num2 = Number(num2)
     if (operator === '+') {
-        result = Math.round(1000 * add(num1, num2))/1000
-        bottomDisplay.innerHTML = result
+        a = add(num1, num2)
+        result = Math.round(a * 1000)/1000
+        bottomDisplay.innerHTML = Math.round(result * 1000)/1000
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '-') {
-        result = Math.round(1000 * subtract(num1, num2))/1000
-        bottomDisplay.innerHTML = result
+        a = subtract(num1, num2)
+        result = Math.round(a * 1000)/1000
+        bottomDisplay.innerHTML = Math.round(result * 1000)/1000
         num1 = result
         num2 = ''
         operator = ''
     }  else if (operator === '*') {
-        result = Math.round(1000 * multiply(num1, num2))/1000
-        bottomDisplay.innerHTML = result
+        a = multiply(num1, num2)
+        result = Math.round(a * 1000)/1000
+        bottomDisplay.innerHTML = Math.round(result * 1000)/1000
         num1 = result
         num2 = ''
         operator = ''
@@ -117,7 +120,8 @@ function calculateMe() {
         num2 = ''
         operator = ''
     }  else if (operator === '÷') {
-        result = Math.round(1000 * divide(num1, num2))/1000
+        a = divide(num1, num2)
+        result = Math.round(a * 1000)/1000
         bottomDisplay.innerHTML = result
         num1 = result
         num2 = ''
