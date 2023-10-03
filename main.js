@@ -11,6 +11,7 @@ equalsBtn.addEventListener('click', calculate)
 clearBtn.addEventListener('click', clearMe)
 deleteBtn.addEventListener('click', deleteMe)
 
+
 const topDisplay = document.getElementById('top')
 topDisplay.innerHTML = ''
 const bottomDisplay = document.getElementById('bottom')
@@ -31,12 +32,30 @@ let num2 = ''
 
 let operator = ''
 
+let tempOperators = []
+
 operators.forEach((oper) => {
     oper.addEventListener('click', () => {
         operator = oper.textContent
-        topDisplay.innerHTML = num1 + ' ' + operator
+        tempOperators.push(operator)
+        console.log(tempOperators)
+        console.log(tempOperators.length)
+        operatorClicked()
     })
 })
+
+function operatorClicked(op) {
+    if (tempOperators.length <= 1) {
+        operator = op
+    }   else if (tempOperators.length = 2) {
+        operator = tempOperators[0]
+        console.log(operator)
+        calculate()
+        tempOperators.shift()
+        operator = tempOperators[0]
+        console.log(operator)
+    }
+}
 
 numbers.forEach((number) => {
     number.addEventListener('click', () => { 
@@ -46,7 +65,7 @@ numbers.forEach((number) => {
         // console.log(`num 1 is ${num1}`)
         } else {
         num2 += number.textContent
-        topDisplay.innerHTML = num1 + ' ' + operator + ' ' + num2
+        topDisplay.innerHTML = num1 + ' ' + tempOperators[0] + ' ' + num2
         // console.log(`num 2 is ${num2}`)
         }
     } )
