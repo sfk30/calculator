@@ -75,6 +75,7 @@ numbers.forEach((number) => {
 function deleteMe() {
     bottomDisplay.innerHTML = ''
     topDisplay.innerHTML = topDisplay.innerHTML.slice(0,-1)
+    num2 = num2.slice(0,-1)
 }
 
 function calculate() {
