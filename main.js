@@ -102,6 +102,9 @@ function deleteMe() {
         topDisplay.innerHTML = topDisplay.innerHTML.slice(0,-1)
         num1 = num1.slice(0,-1)
     }
+    if (topDisplay.innerHTML.length < 1) {
+        num1 = ''
+    }
 }
 function calculateMe() {
     num1 = Number(num1)
