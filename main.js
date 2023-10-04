@@ -104,6 +104,7 @@ function deleteMe() {
     }
     if (topDisplay.innerHTML.length < 1) {
         num1 = ''
+        clearMe()
     }
 }
 function calculateMe() {
