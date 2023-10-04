@@ -90,9 +90,19 @@ function dotBtnPressed() {
 function deleteMe() {
     bottomDisplay.innerHTML = ''
     topDisplay.innerHTML = topDisplay.innerHTML.slice(0,-1)
-    num2 = num2.slice(0,-1)
+    num1 = num1.toString()
+    if (num2) {
+        num2 = num2.slice(0,-1)
+    }
+    if (num2 === '' && topDisplay.innerHTML.length < num1.length + 2 && tempOperators) {
+        tempOperators.shift()
+        operator = ''
+    }  
+    if (num1 && topDisplay.innerHTML.length === num1.length) {
+        topDisplay.innerHTML = topDisplay.innerHTML.slice(0,-1)
+        num1 = num1.slice(0,-1)
+    }
 }
-
 function calculateMe() {
     num1 = Number(num1)
     num2 = Number(num2)
@@ -139,26 +149,28 @@ function clearMe() {
     num2 = ''
     operator = ''
     result = ''
+    tempOperators = []
 }
 
 
 function haveIOverflowed() {
     if (num1.length >= 10) {
         bottomDisplay.innerHTML = 'No more digits please!'
-        resetDisplay()
+        resetMe()
     } else if (num2.length >= 10) {
         bottomDisplay.innerHTML = 'No more digits please!'
-        resetDisplay()
+        resetMe()
     } else {
         return
     }
 }
 
-function resetDisplay() {
+function resetMe() {
     topDisplay.innerHTML = ''
     num1 = ''
     num2 = ''
     operator = ''
     result = ''
+    tempOperators = []
 }
 
