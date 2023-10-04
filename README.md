@@ -1,3 +1,3 @@
 # calculator
 
-Live link:
+Live link: https://sfk30.github.io/calculator/ 
